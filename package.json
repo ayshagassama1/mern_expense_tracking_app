@@ -1,0 +1,16 @@
+{
+  "name": "mern_expense_tracking_app",
+  "version": "1.0.0",
+  "description": "MERN expense tracking application",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DIA-GASSAMA-SAMAKE",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
