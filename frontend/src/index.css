@@ -1,0 +1,58 @@
+/********************************* DEBUT STYLES HEADER *************************************/
+.myLink {
+	font-weight: bolder !important;
+	color: #fff !important;
+}
+.addExpense {
+	background-color: #fff;
+	color: #2daf9a !important;
+	border-radius: 5px;
+}
+/********************************* FIN STYLES HEADER *************************************/
+
+/********************************* DEBUT STYLES FOOTER *************************************/
+footer {
+	bottom: 0;
+}
+/********************************* FIN STYLES FOOTER *************************************/
+
+/********************************* DEBUT STYLES PAGE ACCUEIL *************************************/
+.enteteTableau {
+	width: 60%;
+	background-color: #f5f5f5;
+	border-radius: 5px 5px 0px 0px;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+.enteteTableauDanger {
+	border-bottom: 8px solid #ec5959;
+}
+.enteteTableauPrimary {
+	border-bottom: 8px solid #48caeb;
+}
+.enteteTableauSuccess {
+	border-bottom: 8px solid #1af776;
+}
+.enteteTableauWarning {
+	border-bottom: 8px solid #d2f72e;
+}
+th {
+	background-color: #f5f5f5 !important;
+	border-radius: 4px;
+	text-align: center !important;
+	color: #a3a1a1;
+}
+td {
+	text-align: center !important;
+}
+.tdThisMonth {
+	background-color: #e9fcf5 !important;
+}
+.tableaux {
+	border-top-left-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+}
+table {
+	width: 60% !important;
+}
+/********************************* FIN STYLES PAGE ACCUEIL *************************************/
