@@ -14,8 +14,11 @@ const Connection = () => {
 						<Form.Label>Password</Form.Label>
 						<Form.Control type="password" />
 					</Form.Group>
+					<Form.Group className="mb-3" controlId="password">
+						<Form.Control type="submit" className="mySubmit" value="Save" />
+					</Form.Group>
 					<p className="text-center">
-						Not suscribed yet?
+						Not suscribed yet ?<br />
 						<a href="/inscription" className="text-primary">
 							Sign up
 						</a>

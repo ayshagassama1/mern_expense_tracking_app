@@ -114,6 +114,18 @@ table {
 	color: #2daf9a;
 }
 
+.mySubmit {
+	background-color: #2daf9a !important;
+}
+
+.text-info2 {
+	color: #2daf9a !important;
+}
+
+.mySubmi {
+	background-color: #48caeb !important;
+}
+
 @media only screen and (max-width: 900px) {
 	.myForm {
 		width: 80% !important;

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useState } from "react";
-import { Container, Nav, Navbar, Modal, Button, Form } from "react-bootstrap";
+import { Container, Nav, Navbar, Modal, Button, Form, FormSelect } from "react-bootstrap";
 import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
@@ -49,18 +49,22 @@ const Header = () => {
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body>
 					<Form>
-						<h3 className="text-center">Add expense</h3>
+						<h3 className="text-center text-info2">Add expense</h3>
 						<Form.Group className="mb-3" controlId="email">
-							<Form.Label>Email address</Form.Label>
-							<Form.Control type="email" placeholder="name@example.com" />
+							<Form.Label className="text-info2">Price</Form.Label>
+							<Form.Control type="number" />
+						</Form.Group>
+						<Form.Group className="mb-3" controlId="category">
+							<Form.Label className="text-info2">Category</Form.Label>
+							<Form.Select aria-label="Default select example">
+								<option>Categories</option>
+								<option value="groceries">Groceries</option>
+								<option value="commute">Commute</option>
+								<option value="eating out">Eating out</option>
+							</Form.Select>
 						</Form.Group>
 						<Form.Group className="mb-3" controlId="password">
-							<Form.Label>Password</Form.Label>
-							<Form.Control type="password" />
-						</Form.Group>
-						<Form.Group className="mb-3" controlId="password">
-							<Form.Label>Password</Form.Label>
-							<Form.Control type="password" />
+							<Form.Control type="submit" className="mySubmit" value="Save" />
 						</Form.Group>
 					</Form>
 				</Modal.Body>

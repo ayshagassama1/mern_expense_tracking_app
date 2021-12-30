@@ -22,8 +22,11 @@ const Inscription = () => {
 						<Form.Label>Password</Form.Label>
 						<Form.Control type="password" />
 					</Form.Group>
+					<Form.Group className="mb-3" controlId="password">
+						<Form.Control type="submit" className="mySubmit" value="Save" />
+					</Form.Group>
 					<p className="text-center">
-						Already have an account?
+						Already have an account ?<br />
 						<a href="/connection" className="text-primary">
 							Sign in
 						</a>
