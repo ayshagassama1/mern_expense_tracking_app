@@ -7,11 +7,11 @@ const Header = () => {
 	return (
 		<Navbar bg="info" variant="dark" expand="lg">
 			<Container>
-				<Navbar.Brand href="#home">Expense Tracking App</Navbar.Brand>
+				<Navbar.Brand href="/">Expense Tracking App</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="m-auto">
-						<Nav.Link href="#home" className="myLink">
+						<Nav.Link href="/" className="myLink">
 							<FontAwesomeIcon icon={faHome} />
 						</Nav.Link>
 						<Nav.Link href="#features" className="myLink">
@@ -29,8 +29,8 @@ const Header = () => {
 						<Nav.Link href="#pricing" className="myLink">
 							My profile
 						</Nav.Link>
-						<Nav.Link href="#pricing" className="myLink">
-							Sign out
+						<Nav.Link href="/connection" className="myLink">
+							Sign in
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
