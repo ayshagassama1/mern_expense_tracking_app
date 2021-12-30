@@ -9,7 +9,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Header />
-			<main>
+			<main style={{ minHeight: "87vh" }}>
 				<Routes>
 					<Route path="/" element={<Body />} exact />
 					<Route path="/connection" element={<Connection />} />
