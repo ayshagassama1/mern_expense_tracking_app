@@ -5,6 +5,7 @@ import Body from "./components/Body";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Connection from "./components/Connection";
 import Inscription from "./components/Inscription";
+import MyProfile from "./components/MyProfile";
 function App() {
 	return (
 		<BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
 					<Route path="/" element={<Body />} exact />
 					<Route path="/connection" element={<Connection />} />
 					<Route path="/inscription" element={<Inscription />} />
+					<Route path="/profile" element={<MyProfile />} />
 				</Routes>
 			</main>
 			<Footer />

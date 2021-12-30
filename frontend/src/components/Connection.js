@@ -15,7 +15,7 @@ const Connection = () => {
 						<Form.Control type="password" />
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="password">
-						<Form.Control type="submit" className="mySubmit" value="Save" />
+						<Form.Control type="submit" className="mySubmit" value="Sign In" />
 					</Form.Group>
 					<p className="text-center">
 						Not suscribed yet ?<br />

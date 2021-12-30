@@ -34,7 +34,7 @@ const Header = () => {
 								<FontAwesomeIcon icon={faPlusSquare} />
 								&nbsp;Add expense
 							</Nav.Link>
-							<Nav.Link href="#pricing" className="myLink">
+							<Nav.Link href="/profile" className="myLink">
 								My profile
 							</Nav.Link>
 							<Nav.Link href="/connection" className="myLink">

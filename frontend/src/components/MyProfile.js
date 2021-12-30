@@ -1,11 +1,11 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-const Inscription = () => {
+const MyProfile = () => {
 	return (
 		<div className="formBloc">
 			<div className="myForm">
 				<Form>
-					<h3 className="text-center">Inscription</h3>
+					<h3 className="text-center">My profile</h3>
 					<Form.Group className="mb-3" controlId="name">
 						<Form.Label>Name</Form.Label>
 						<Form.Control type="email" placeholder="nana" />
@@ -23,18 +23,12 @@ const Inscription = () => {
 						<Form.Control type="password" />
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="password">
-						<Form.Control type="submit" className="mySubmit" value="Sign up" />
+						<Form.Control type="submit" className="mySubmit" value="Modify" />
 					</Form.Group>
-					<p className="text-center">
-						Already have an account ?<br />
-						<a href="/connection" className="text-primary">
-							Sign in
-						</a>
-					</p>
 				</Form>
 			</div>
 		</div>
 	);
 };
 
-export default Inscription;
+export default MyProfile;
