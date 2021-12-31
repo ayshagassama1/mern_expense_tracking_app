@@ -1,0 +1,26 @@
+import "./App.css";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import Body from "./components/Body";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Connection from "./components/Connection";
+import Inscription from "./components/Inscription";
+import MyProfile from "./components/MyProfile";
+function App() {
+	return (
+		<BrowserRouter>
+			<Header />
+			<main style={{ minHeight: "87vh" }}>
+				<Routes>
+					<Route path="/" element={<Body />} exact />
+					<Route path="/connection" element={<Connection />} />
+					<Route path="/inscription" element={<Inscription />} />
+					<Route path="/profile" element={<MyProfile />} />
+				</Routes>
+			</main>
+			<Footer />
+		</BrowserRouter>
+	);
+}
+
+export default App;
