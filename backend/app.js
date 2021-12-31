@@ -29,7 +29,7 @@ db.once("open",() => {
     console.log('connected');
 });
 
-app.use('/',expenseRoutes );
+//app.use('/',expenseRoutes );
 app.use('/',userRoutes);
 
 
