@@ -1,0 +1,14 @@
+<div class="list-container">
+    <% expenses.forEach(e => { %>
+    <div class="expense">
+        <p>
+            <span class="item-label"> Categorie:</span>
+            <%= e.categorie %>
+        </p>
+        <p>
+            <span class="item-label"> Montant:</span>
+            <%= e.montant %>
+        </p>
+    </div>
+    <% }); %>
+</div>

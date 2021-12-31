@@ -1,0 +1,14 @@
+<div class="list-container">
+    <% users.forEach(e => { %>
+    <div class="user">
+        <p>
+            <span class="item-label"> firstName:</span>
+            <%= e.firstName %>
+        </p>
+        <p>
+            <span class="item-label"> LastName:</span>
+            <%= e.lastName %>
+        </p>
+    </div>
+    <% }); %>
+</div>
