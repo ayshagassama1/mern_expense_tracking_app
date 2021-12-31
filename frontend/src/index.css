@@ -75,11 +75,72 @@ td {
 	margin-bottom: 1rem;
 }
 
+.u-spent {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	align-items: center;
+	width: 70rem;
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+	color: #2daf9a;
+}
+
+.spent-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.recent-spent {
+	margin-top: 2rem;
+
+	display: flex;
+	flex-direction: column;
+	color: gray;
+	font-weight: bold;
+	width: 50%;
+}
+
+.my-container {
+	position: relative;
+	text-align: center;
+	top: 0;
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.bloc-spent {
+	width: 100%;
+	border: 3px solid #ecebeb;
+	margin: 5px;
+	border-radius: 8px;
+	text-align: center;
+	padding: 3px;
+}
+
+.sum-spent {
+	color: #2daf9a;
+}
+
+.bloc-a-accueil {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+}
+
 .tableaux {
+	padding-top: 1rem;
 	border-top-left-radius: 0px !important;
 	border-top-right-radius: 0px !important;
 	align-self: center;
-	width: 50rem;
+	width: 70rem;
 }
 
 .tableaux .container {
@@ -131,4 +192,4 @@ table {
 		width: 80% !important;
 	}
 }
-/********************************* DEBUT STYLES FORMULAIRE *************************************/
+/********************************* FIN STYLES FORMULAIRE *************************************/
