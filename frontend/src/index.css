@@ -201,8 +201,13 @@ table {
 }
 
 .charts {
-	width: 50%;
+	width: 80%;
 	margin-top: 1em;
+}
+
+.doughnut {
+	width: 60%;
+	height: 60%;
 }
 
 .tabChartsContent {
@@ -215,6 +220,10 @@ table {
 	.charts {
 		width: 100%;
 		margin-top: 1em;
+	}
+	.doughnut {
+		width: 100%;
+		height: 100%;
 	}
 }
 /********************************* FIN STYLES CHARTS *************************************/
