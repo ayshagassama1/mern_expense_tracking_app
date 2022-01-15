@@ -193,3 +193,28 @@ table {
 	}
 }
 /********************************* FIN STYLES FORMULAIRE *************************************/
+
+/********************************* DEBUT STYLES CHARTS *************************************/
+.tabCharts {
+	margin-top: 2em;
+	width: 98%;
+}
+
+.charts {
+	width: 50%;
+	margin-top: 1em;
+}
+
+.tabChartsContent {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+@media only screen and (max-width: 900px) {
+	.charts {
+		width: 100%;
+		margin-top: 1em;
+	}
+}
+/********************************* FIN STYLES CHARTS *************************************/
