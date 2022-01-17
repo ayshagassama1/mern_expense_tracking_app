@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from "react";
+import axios from "axios";
 import { Form } from "react-bootstrap";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
@@ -52,9 +52,9 @@ const Inscription = () => {
 	}
 };
 
-useEffect(() => {
+/*useEffect(() => {
 	submitHandler();
-}, []);
+}, []);*/
  
 	return (
 		<div className="formBloc">

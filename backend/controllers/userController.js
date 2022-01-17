@@ -5,7 +5,7 @@ const User = require('../models/userModels');
 
 
 const registerUser = asyncHandler(async (req, res) => {
-  const {email, password,firstName,lastName} = req.body;
+  const {firstName,lastName, email, password} = req.body;
 
   const userExists = await User.findOne({email});
 
@@ -22,6 +22,7 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if(user) {
+    user.save();
     res.status(201).json({
       _id: user._id,
       firstName: user.firstName,

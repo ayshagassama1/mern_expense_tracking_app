@@ -1,6 +1,13 @@
 const express = require('express');
+const dotenv  = require("dotenv");
+const connectDB = require("./config/db");
+
 
 const app = express();
+dotenv.config();
+//connectDB();
+
+
 
 const mongoose = require('mongoose');
 
@@ -20,6 +27,8 @@ const expenseRoutes = require('./routes/expense');
 const {notFound, errorHandler} = require("./middlewares/errormiddleware");
 
 app.set("view engine" ,"ejs");
+
+
 
 //Connexion à la base de données 
 
