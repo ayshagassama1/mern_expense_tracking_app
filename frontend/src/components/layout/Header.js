@@ -37,7 +37,7 @@ const Header = () => {
 							<Nav.Link href="/profile" className="myLink">
 								My profile
 							</Nav.Link>
-							<Nav.Link href="/connection" className="myLink">
+							<Nav.Link href="/login" className="myLink">
 								Sign in
 							</Nav.Link>
 						</Nav>

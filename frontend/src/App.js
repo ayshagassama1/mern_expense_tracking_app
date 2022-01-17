@@ -13,8 +13,8 @@ function App() {
 			<main style={{ minHeight: "87vh" }}>
 				<Routes>
 					<Route path="/" element={<Body />} exact />
-					<Route path="/connection" element={<Connection />} />
-					<Route path="/inscription" element={<Inscription />} />
+					<Route path="/login" element={<Connection />} />
+					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 				</Routes>
 			</main>

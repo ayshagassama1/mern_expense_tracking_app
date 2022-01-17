@@ -1,8 +1,92 @@
 const bcrypt = require('bcrypt'); // pour le cryptage du mot de passe
 
-const User = require('../models/user');
+const asyncHandler = require('express-async-handler');
+const User = require('../models/userModels');
 
-exports.signup = (req, res, next) => {
+
+const registerUser = asyncHandler(async (req, res) => {
+  const {email, password,firstName,lastName} = req.body;
+
+  const userExists = await User.findOne({email});
+
+  if(userExists) {
+    res.status(400);
+    throw new Error("User Already Exists");
+  }
+
+  const user = await User.create({
+    firstName,
+    lastName,
+    email,
+    password,
+  });
+
+  if(user) {
+    res.status(201).json({
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    });
+    console.log(res);
+  } else {
+    res.status(400);
+    throw new Error("Error Occured");
+  }
+});
+
+const authUser = asyncHandler(async (req, res, next) => {
+  const {email, password,firstName,lastName} = req.body;
+  User.findOne({ email })
+  .then(user => {
+    if (!user) {
+      return res.status(401).json({ error: 'Utilisateur non trouvé !' });
+    }
+    bcrypt.compare(password, user.password)
+      .then(valid => {
+        if (!valid) {
+          return res.status(401).json({ error: 'Mot de passe incorrect !' });
+        }
+        res.status(200).json({
+          _id: user._id,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          email: user.email,
+          isAdmin: user.isAdmin
+        });
+      })
+      .catch(error => res.status(500).json({ error }));
+  })
+  .catch(error => res.status(500).json({ error }));
+
+});
+
+/*const authUser = asyncHandler(async (req, res, next) => {
+  const {email, password,firstName,lastName} = req.body;
+
+  const user = await User.findOne({ email});
+
+  if(user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin
+    });
+  } else {
+    res.status(400);
+    throw new Error("Invalid email or password");
+  }
+
+});*/
+
+module.exports ={ registerUser,authUser};
+
+
+
+/*exports.signup = (req, res, next) => {
   bcrypt.hash(req.body.password, 10)
   .then(hash => {
     const user = new User({
@@ -19,27 +103,6 @@ exports.signup = (req, res, next) => {
 
 };
 
-exports.login = (req, res, next) => {
-  User.findOne({ email: req.body.email })
-  .then(user => {
-    if (!user) {
-      return res.status(401).json({ error: 'Utilisateur non trouvé !' });
-    }
-    bcrypt.compare(req.body.password, user.password)
-      .then(valid => {
-        if (!valid) {
-          return res.status(401).json({ error: 'Mot de passe incorrect !' });
-        }
-        res.status(200).json({
-          userId: user._id,
-          token: 'TOKEN'
-        });
-      })
-      .catch(error => res.status(500).json({ error }));
-  })
-  .catch(error => res.status(500).json({ error }));
-
-};
 
 exports.getAllUser  = (req, res,next) =>{
   User.find({}, (error, users) => {
@@ -47,7 +110,7 @@ exports.getAllUser  = (req, res,next) =>{
       req.data = users;
       next();
   });
-};
+};*/
 //const User = require('../models/user');
 
 /*exports.createUser = (req, res, next) => {
