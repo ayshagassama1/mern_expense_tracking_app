@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState } from "react";
-import { Container, Nav, Navbar, Modal, Button, Form, FormSelect } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Nav, Navbar, Modal, Form} from "react-bootstrap";
 import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
@@ -19,16 +19,16 @@ const Header = () => {
 							<Nav.Link href="/" className="myLink">
 								<FontAwesomeIcon icon={faHome} />
 							</Nav.Link>
-							<Nav.Link href="#features" className="myLink">
+							<Nav.Link href="#" className="myLink">
 								Expenses
 							</Nav.Link>
-							<Nav.Link href="#pricing" className="myLink">
+							<Nav.Link href="/reports" className="myLink">
 								Reports
 							</Nav.Link>
 						</Nav>
 						<Nav>
 							<Nav.Link
-								href="#pricing"
+								href="#"
 								className="addExpense myLink"
 								onClick={handleShow}>
 								<FontAwesomeIcon icon={faPlusSquare} />

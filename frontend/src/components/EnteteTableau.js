@@ -1,6 +1,4 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import Card from "react-bootstrap/Card";
 
 const EnteteTableau = (props) => {
 	return (
