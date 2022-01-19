@@ -38,19 +38,39 @@ footer {
 }
 
 .enteteTableauDanger {
-	border-bottom: 5px solid #ec5959;
+	border-bottom: 5px solid rgba(255, 99, 132, 0.5);
 }
 
 .enteteTableauPrimary {
-	border-bottom: 5px solid #48caeb;
+	border-bottom: 5px solid rgba(54, 162, 235, 0.5);
 }
 
 .enteteTableauSuccess {
-	border-bottom: 5px solid #1af776;
+	border-bottom: 5px solid rgba(75, 255, 192, 0.5);
 }
 
 .enteteTableauWarning {
-	border-bottom: 5px solid #d2f72e;
+	border-bottom: 5px solid rgba(255, 206, 86, 0.5);
+}
+
+.colorWarning {
+	color: rgba(255, 206, 86);
+	font-size: 20px;
+}
+
+.colorDanger {
+	color: rgba(255, 99, 132);
+	font-size: 20px;
+}
+
+.colorPrimary {
+	color: rgba(54, 162, 235);
+	font-size: 20px;
+}
+
+.colorSuccess {
+	color: rgba(75, 255, 192);
+	font-size: 20px;
 }
 
 th {
