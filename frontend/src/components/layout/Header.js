@@ -46,9 +46,7 @@ const Header = () => {
 							<Nav.Link href="/login" className="myLink">
 								Sign in
 							</Nav.Link>
-							<Nav.Link href="/" className="myLink">
-								logout
-							</Nav.Link>
+							
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
