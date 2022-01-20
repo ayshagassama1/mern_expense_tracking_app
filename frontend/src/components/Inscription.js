@@ -5,14 +5,21 @@ import { Form } from "react-bootstrap";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 import  {register } from "../actions/userAction";
+import { useDispatch } from "react-redux";
 function Inscription  () {
 	
-     
+     let navigate = useNavigate();
+	 const dispatch = useDispatch();
+
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState(null);
+    const [password, setPassword] = useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [confirmpassword, setConfirmpassword] = useState();
+	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-	//const [error, setError] = useState(false);
-	//const [loading, setLoading] = useState(false);
     
 
 	
@@ -23,6 +30,7 @@ function Inscription  () {
 			setMessage("Passwords do not match");
 		  } else {
 			   dispatch(register(firstName,lastName, email, password));
+			   navigate("/");
 		  }
     };
 	  
