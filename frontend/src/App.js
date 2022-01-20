@@ -7,9 +7,10 @@ import Connection from "./components/Connection";
 import Inscription from "./components/Inscription";
 import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
+import LandingPage from "./components/LandingPage";
 function App() {
 	
-		
+ return(	
 		<BrowserRouter>
 			      <Header/>
 			<main style={{ minHeight: "87vh" }}>
@@ -19,13 +20,12 @@ function App() {
 					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/reports" element={<Reports />} />
-					<Route path="/expenses" element={<Expenses />} />
 					<Route path="/landingPage" element={<LandingPage />} />
 				</Routes>
 			</main>
 			<Footer />
 		</BrowserRouter>
-	);
-}
+	
+ )};
 
 export default App;
