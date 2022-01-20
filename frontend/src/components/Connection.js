@@ -1,44 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import axios from "axios";
 import Loading from "./Loading";
-import ErrorMessage from "./ErrorMessage";
+import {Link,useNavigate } from "react-router-dom";
 
-const Connection = () => {
+import ErrorMessage from "./ErrorMessage";
+import { useDispatch, useSelector } from "react-redux";
+import {login} from "../actions/userAction";
+
+const Connection =({connect}) => {
+
+	let navigate = useNavigate();
+	
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [error, setError] = useState(false);
-	const [loading, setLoading] = useState(false);
-	const [message, setMessage] = useState(null);
+	
+	const dispatch = useDispatch();
 
-	const submitHandler = async (e) => {
+	const userLogin =  useSelector((state) => state.userLogin);
+	const { loading, error, userInfo} = userLogin;
+
+	const submitHandler =  (e) => {
 		e.preventDefault();
-
-		try {
-			const config = {
-				Headers: {
-					"Content-type": "application/json",
-				},
-			};
-
-			setLoading(true);
-
-			const { data } = await axios.post(
-				"/api/users/login",
-				{
-					email,
-					password,
-				},
-				config
-			);
-
-			console.log(data);
-			localStorage.setItem("userInfo", JSON.stringify(data));
-			setLoading(false);
-		} catch (error) {
-			setError(error.response.data.message);
+        dispatch(login(email, password));
+		if(userInfo) {
+			navigate("/expenses");
 		}
 	};
 

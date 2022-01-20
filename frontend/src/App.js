@@ -7,13 +7,13 @@ import Connection from "./components/Connection";
 import Inscription from "./components/Inscription";
 import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
-import Expenses from "./components/Expenses";
 import LandingPage from "./components/LandingPage";
-
+import Expenses from "./components/Expenses";
 function App() {
-	return (
+	
+ return(	
 		<BrowserRouter>
-			<Header />
+			      <Header/>
 			<main style={{ minHeight: "87vh" }}>
 				<Routes>
 					<Route path="/" element={<Body />} exact />
@@ -27,7 +27,7 @@ function App() {
 			</main>
 			<Footer />
 		</BrowserRouter>
-	);
-}
+	
+ )};
 
 export default App;
