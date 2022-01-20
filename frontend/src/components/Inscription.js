@@ -1,30 +1,20 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
-import {useDispatch, useSelector } from "react-redux";
 import  {register } from "../actions/userAction";
 function Inscription  () {
 	
      
 	const [email, setEmail] = useState("");
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setLastName] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirmpassword, setConfirmpassword] = useState("");
 	const [message, setMessage] = useState(null);
 
-	
 	//const [error, setError] = useState(false);
 	//const [loading, setLoading] = useState(false);
     
 
-	const dispatch = useDispatch();
-
-	const userRegister = useSelector((state) => state.userRegister);
-	const  { loading, error, userInfo } = userRegister;
 	
 	
 	const submitHandler = (e) => {
@@ -107,32 +97,34 @@ function Inscription  () {
 
 		/*if (password !== confirmpassword) {
 			setMessage("Passwords do not Match");
-		} else{
+		} else {
 			setMessage(null);
-		    try {const config = {
-			Headers: {
-				"Content-type":"application/json",
-			},
-		};
+			try {
+				const config = {
+					Headers: {
+						"Content-type": "application/json",
+					},
+				};
 
-		    setLoading(true);
+				setLoading(true);
 
-		     const {data} = await axios.post('/api/users',
-		      {
-			    firstName,
-			    lastName,
-			    email,
-		     	password
-		     },
-             config
-		);
-         
-		console.log(data);
-		localStorage.setItem("userInfo", JSON.stringify(data));
-		setLoading(false);
-	} catch (error) {
-		setError(error.response.data.message);
-			
+				const { data } = await axios.post(
+					"/api/users",
+					{
+						firstName,
+						lastName,
+						email,
+						password,
+					},
+					config
+				);
+
+				console.log(data);
+				localStorage.setItem("userInfo", JSON.stringify(data));
+				setLoading(false);
+			} catch (error) {
+				setError(error.response.data.message);
+			}
 		}
 	}
 };*/

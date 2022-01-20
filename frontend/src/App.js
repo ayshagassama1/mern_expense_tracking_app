@@ -7,11 +7,8 @@ import Connection from "./components/Connection";
 import Inscription from "./components/Inscription";
 import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
-
-
 function App() {
 	
-	return (
 		
 		<BrowserRouter>
 			      <Header/>
@@ -22,6 +19,8 @@ function App() {
 					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/reports" element={<Reports />} />
+					<Route path="/expenses" element={<Expenses />} />
+					<Route path="/landingPage" element={<LandingPage />} />
 				</Routes>
 			</main>
 			<Footer />

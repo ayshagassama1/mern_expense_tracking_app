@@ -23,24 +23,29 @@ const Connection =() => {
 	};
 
 	return (
-			<div className="myForm"> 
-			    {error && <ErrorMessage variant ="danger">{error}</ErrorMessage>}
+		<div className="formBloc">
+			<div className="myForm">
+				{error && <ErrorMessage variant="danger">{error}</ErrorMessage>}
 				{loading && <Loading />}
 				<Form onSubmit={submitHandler}>
 					<h3 className="text-center">Connection</h3>
 					<Form.Group className="mb-3" controlId="email">
 						<Form.Label>Email address</Form.Label>
-						<Form.Control type="email" 
-						value ={email} 
-						placeholder="name@example.com" 
-						onChange={(e) => setEmail(e.target.value)}/>
+						<Form.Control
+							type="email"
+							value={email}
+							placeholder="name@example.com"
+							onChange={(e) => setEmail(e.target.value)}
+						/>
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="password">
 						<Form.Label>Password</Form.Label>
-						<Form.Control type="password"
-						value={password}
-						placeholder="Password"
-						onChange={(e) => setPassword(e.target.value)} />
+						<Form.Control
+							type="password"
+							value={password}
+							placeholder="Password"
+							onChange={(e) => setPassword(e.target.value)}
+						/>
 					</Form.Group>
 					<Form.Group className="mb-3" controlId="password">
 						<Form.Control type="submit" className="mySubmit" value="Sign In" />
@@ -53,7 +58,7 @@ const Connection =() => {
 					</p>
 				</Form>
 			</div>
-		
+		</div>
 	);
 };
 
