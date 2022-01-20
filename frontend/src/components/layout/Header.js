@@ -4,10 +4,17 @@ import { Container, Nav, Navbar, Modal, Form} from "react-bootstrap";
 import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+
+	
 	const [show, setShow] = useState(false);
+
+	
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+
+	
+
 	return (
 		<>
 			<Navbar bg="info" variant="dark" expand="lg">
@@ -21,7 +28,7 @@ const Header = () => {
 							</Nav.Link>
 							<Nav.Link href="#" className="myLink">
 								Expenses
-							</Nav.Link>
+							</Nav.Link>Failed to load resource: the server responded with a status of 500 (Internal Server Error)
 							<Nav.Link href="/reports" className="myLink">
 								Reports
 							</Nav.Link>
@@ -39,6 +46,9 @@ const Header = () => {
 							</Nav.Link>
 							<Nav.Link href="/login" className="myLink">
 								Sign in
+							</Nav.Link>
+							<Nav.Link href="/" className="myLink">
+								logout
 							</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
