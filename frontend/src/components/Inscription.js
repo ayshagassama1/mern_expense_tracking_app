@@ -30,7 +30,7 @@ function Inscription  () {
 			setMessage("Passwords do not match");
 		  } else {
 			   dispatch(register(firstName,lastName, email, password));
-			   navigate("/");
+			   navigate("/home");
 		  }
     };
 	  

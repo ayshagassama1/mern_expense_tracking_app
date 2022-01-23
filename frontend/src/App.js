@@ -9,6 +9,7 @@ import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
 import LandingPage from "./components/LandingPage";
 import Expenses from "./components/Expenses";
+import CreateExpense from "./components/CreateExpense";
 function App() {
 	
  return(	
@@ -16,13 +17,14 @@ function App() {
 			      <Header/>
 			<main style={{ minHeight: "87vh" }}>
 				<Routes>
-					<Route path="/" element={<Body />} exact />
+					<Route path="/home" element={<Body />} exact />
 					<Route path="/login" element={<Connection />} />
 					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/reports" element={<Reports />} />
 					<Route path="/expenses" element={<Expenses />} />
-					<Route path="/landingPage" element={<LandingPage />} />
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/createexpense" element={<CreateExpense />} />
 				</Routes>
 			</main>
 			<Footer />
