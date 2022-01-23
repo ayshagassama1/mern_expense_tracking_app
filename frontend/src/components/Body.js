@@ -3,7 +3,9 @@ import { Card } from "react-bootstrap";
 import Spend from "./Spend";
 import Tableau from "./Tableau";
 
+
 const Body = () => {
+
 	return (
 		<>
 			<div className="bloc-a-accueil">

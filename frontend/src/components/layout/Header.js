@@ -3,11 +3,22 @@ import React, { useState } from "react";
 import { Container, Nav, Navbar, Modal, Form} from "react-bootstrap";
 import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
 
+
 const Header = () => {
+
+	
+
+
+	
 	const [show, setShow] = useState(false);
+
+	
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+
+	
+
 	return (
 		<>
 			<Navbar bg="info" variant="dark" expand="lg">
@@ -40,6 +51,7 @@ const Header = () => {
 							<Nav.Link href="/login" className="myLink">
 								Sign in
 							</Nav.Link>
+							
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

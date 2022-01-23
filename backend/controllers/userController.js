@@ -2,6 +2,30 @@ const bcrypt = require('bcrypt'); // pour le cryptage du mot de passe
 
 const asyncHandler = require('express-async-handler');
 const User = require('../models/userModels');
+const generateToken = require("../utils/generateToken");
+
+
+const authUser = asyncHandler(async (req, res, next) => {
+  const {email, password} = req.body;
+
+  const user = await User.findOne({ email});
+
+  if(user && (await user.matchPassword(req.body.password))) {
+    res.json({
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: generateToken(user._id),
+      
+    });
+  } else {
+    res.status(401);
+    throw new Error("Invalid email or password");
+  }
+
+});
 
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -22,13 +46,14 @@ const registerUser = asyncHandler(async (req, res) => {
   });
 
   if(user) {
-    user.save();
+    //user.save();
     res.status(201).json({
       _id: user._id,
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
       isAdmin: user.isAdmin,
+      token: generateToken(user._id),
     });
     console.log(res);
   } else {
@@ -37,8 +62,12 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-const authUser = asyncHandler(async (req, res, next) => {
-  const {email, password,firstName,lastName} = req.body;
+
+module.exports ={ registerUser,authUser };
+
+
+/*const authUser = asyncHandler(async (req, res, next) => {
+  const {firstName,lastName,email, password} = req.body;
   User.findOne({ email })
   .then(user => {
     if (!user) {
@@ -61,29 +90,10 @@ const authUser = asyncHandler(async (req, res, next) => {
   })
   .catch(error => res.status(500).json({ error }));
 
-});
-
-/*const authUser = asyncHandler(async (req, res, next) => {
-  const {email, password,firstName,lastName} = req.body;
-
-  const user = await User.findOne({ email});
-
-  if(user && (await user.matchPassword(password))) {
-    res.json({
-      _id: user._id,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      isAdmin: user.isAdmin
-    });
-  } else {
-    res.status(400);
-    throw new Error("Invalid email or password");
-  }
-
 });*/
 
-module.exports ={ registerUser,authUser};
+
+
 
 
 
