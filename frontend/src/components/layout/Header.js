@@ -12,12 +12,8 @@ const Header = () => {
 	
 	const [show, setShow] = useState(false);
 
-	
-
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-
-	
 
 	return (
 		<>
@@ -49,9 +45,8 @@ const Header = () => {
 								My profile
 							</Nav.Link>
 							<Nav.Link href="/login" className="myLink">
-								Sign in
+								Sign out
 							</Nav.Link>
-							
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
