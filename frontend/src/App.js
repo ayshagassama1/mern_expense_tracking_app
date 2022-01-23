@@ -7,10 +7,14 @@ import Connection from "./components/Connection";
 import Inscription from "./components/Inscription";
 import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
+import Test from "./components/Test";
+
 function App() {
+	
 	return (
+		
 		<BrowserRouter>
-			<Header />
+			      <Header/>
 			<main style={{ minHeight: "87vh" }}>
 				<Routes>
 					<Route path="/" element={<Body />} exact />
@@ -18,6 +22,13 @@ function App() {
 					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/reports" element={<Reports />} />
+			
+                    <Route
+          path="/tests"
+          element={
+            <Test   />
+          }
+        />
 				</Routes>
 			</main>
 			<Footer />
