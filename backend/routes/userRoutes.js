@@ -1,12 +1,13 @@
 const express = require('express');
+const { get } = require('express/lib/response');
 const router = express.Router();
 
 
-const {registerUser, authUser }  = require('../controllers/userController');
+const {registerUser, authUser, listUser}  = require('../controllers/userController');
 
 router.route("/").post(registerUser);
 router.route("/login").post(authUser);
-
+//router.route("/allUser").get(listUser);
 
 /* N'oubliez pas que le segment de route indiqué ici est uniquement le segment final, car le reste de l'adresse de la route sera déclaré dans notre application Express.*/
 /*router.post('/signup',userController.signup, (req, res, next) => {

@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
@@ -8,7 +8,7 @@ export default class Spend extends Component {
 		return (
 			<div className="u-spent">
 				<h2>You've spent</h2>
-				<div align-center className="spent-details">
+				<div className="spent-details">
 					<div>
 						<div className="my-container">
 							<img src="mai.jpg" alt="image" className="img-fluid w-50"></img>

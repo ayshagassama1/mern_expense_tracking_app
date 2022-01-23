@@ -16,7 +16,7 @@ export const options = {
 	plugins: {
 		title: {
 			display: true,
-			text: "Chart.js Bar Chart - Stacked",
+			text: "Global expenses report",
 		},
 	},
 	responsive: true,
