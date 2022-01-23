@@ -1,14 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
-import { Container, Nav, Navbar, Modal, Form} from "react-bootstrap";
-import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
-
-
+import { Container, Nav, Navbar, Modal, Form } from "react-bootstrap";
+import { faPlusSquare, faHome, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
-
-	
-
 
 	
 	const [show, setShow] = useState(false);
@@ -18,18 +13,22 @@ const Header = () => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
+	
+
 	return (
 		<>
-			<Navbar bg="info" variant="dark" expand="lg">
+			<Navbar bg="primary" variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand href="/">Expense Tracking App</Navbar.Brand>
+					<Navbar.Brand href="/">
+						<FontAwesomeIcon icon={faMoneyBill} /> &nbsp; Expense Tracking App
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="m-auto">
 							<Nav.Link href="/" className="myLink">
 								<FontAwesomeIcon icon={faHome} />
 							</Nav.Link>
-							<Nav.Link href="#" className="myLink">
+							<Nav.Link href="/expenses" className="myLink">
 								Expenses
 							</Nav.Link>
 							<Nav.Link href="/reports" className="myLink">
@@ -37,10 +36,7 @@ const Header = () => {
 							</Nav.Link>
 						</Nav>
 						<Nav>
-							<Nav.Link
-								href="#"
-								className="addExpense myLink"
-								onClick={handleShow}>
+							<Nav.Link href="/createexpense" className="addExpense myLink" onClick={handleShow}>
 								<FontAwesomeIcon icon={faPlusSquare} />
 								&nbsp;Add expense
 							</Nav.Link>
@@ -48,7 +44,7 @@ const Header = () => {
 								My profile
 							</Nav.Link>
 							<Nav.Link href="/login" className="myLink">
-								Sign out
+								Sign in
 							</Nav.Link>
 							
 						</Nav>

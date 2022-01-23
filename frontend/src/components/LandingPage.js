@@ -1,8 +1,18 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import NavBarNonConnecte from "./layout/NavBarNonConnecte";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+
+	let navigate = useNavigate();
+	const LogTo = () => {
+		navigate("/login");
+	}
+
+	const goToCreerCompte = () =>{
+		navigate("/register");
+	}
 	return (
 		<>
 			<NavBarNonConnecte />
@@ -28,11 +38,11 @@ const LandingPage = () => {
 						color: "#593196",
 						width: "15%",
 					}}>
-					<Button variant="light" className="text-primary">
+					<Button variant="light" className="text-primary" onClick={LogTo}>
 						Sign in
 					</Button>
 
-					<Button variant="light" className="text-primary">
+					<Button variant="light" className="text-primary" onClick={goToCreerCompte}>
 						Sign up
 					</Button>
 				</div>
