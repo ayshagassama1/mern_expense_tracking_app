@@ -6,19 +6,9 @@ import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 import { useDispatch, useSelector } from "react-redux";
 
+
 const Body = () => {
 
-	/* dispatch = useDispatch();
-
-	const userLogin = useSelector((state) => state.userLogin);
-    const { userInfo } = userLogin;
-
-	useEffect(() => {
-		dispatch();
-		if (!userInfo) {
-		  history.push("/");
-		}
-	  }, [dispatch, history,]);*/
 	return (
 		<>
 			<div className="bloc-a-accueil">

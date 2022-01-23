@@ -1,51 +1,40 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { Form } from "react-bootstrap";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
-import {useDispatch, useSelector } from "react-redux";
 import  {register } from "../actions/userAction";
+import { useDispatch } from "react-redux";
 function Inscription  () {
-	let navigate = useNavigate();
-     
+	
+     let navigate = useNavigate();
+	 const dispatch = useDispatch();
+
 	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState(null);
+    const [password, setPassword] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirmpassword, setConfirmpassword] = useState("");
-	const [message, setMessage] = useState(null);
+	const [confirmpassword, setConfirmpassword] = useState();
+	const [error, setError] = useState(false);
+	const [loading, setLoading] = useState(false);
 
-	
-	//const [error, setError] = useState(false);
-	//const [loading, setLoading] = useState(false);
     
 
-	const dispatch = useDispatch();
-
-	const userRegister = useSelector((state) => state.userRegister);
-	const  { loading, error, userInfo } = userRegister;
 	
-	useEffect(() => {
-		
-		
-		if(userInfo) {
-			
-			navigate("/tests");
-		}
 	
-	}, [navigate,userInfo]);
-
 	const submitHandler = (e) => {
 		e.preventDefault();
 		if (password !== confirmpassword) {
 			setMessage("Passwords do not match");
 		  } else {
 			   dispatch(register(firstName,lastName, email, password));
+			   navigate("/home");
 		  }
-};
+    };
 	  
-return (
+        return (
 				<div className="formBloc">
 					<div className="myForm">
 						{error && <ErrorMessage variant ="danger"> {error}</ErrorMessage>}
@@ -116,32 +105,34 @@ return (
 
 		/*if (password !== confirmpassword) {
 			setMessage("Passwords do not Match");
-		} else{
+		} else {
 			setMessage(null);
-		    try {const config = {
-			Headers: {
-				"Content-type":"application/json",
-			},
-		};
+			try {
+				const config = {
+					Headers: {
+						"Content-type": "application/json",
+					},
+				};
 
-		    setLoading(true);
+				setLoading(true);
 
-		     const {data} = await axios.post('/api/users',
-		      {
-			    firstName,
-			    lastName,
-			    email,
-		     	password
-		     },
-             config
-		);
-         
-		console.log(data);
-		localStorage.setItem("userInfo", JSON.stringify(data));
-		setLoading(false);
-	} catch (error) {
-		setError(error.response.data.message);
-			
+				const { data } = await axios.post(
+					"/api/users",
+					{
+						firstName,
+						lastName,
+						email,
+						password,
+					},
+					config
+				);
+
+				console.log(data);
+				localStorage.setItem("userInfo", JSON.stringify(data));
+				setLoading(false);
+			} catch (error) {
+				setError(error.response.data.message);
+			}
 		}
 	}
 };*/

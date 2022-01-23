@@ -9,7 +9,7 @@ body {
 
 .addExpense {
 	background-color: #fff;
-	color: #2daf9a !important;
+	color: #f3008e !important;
 	border-radius: 5px;
 }
 
@@ -38,19 +38,39 @@ footer {
 }
 
 .enteteTableauDanger {
-	border-bottom: 5px solid #ec5959;
+	border-bottom: 5px solid rgba(255, 99, 132, 0.5);
 }
 
 .enteteTableauPrimary {
-	border-bottom: 5px solid #48caeb;
+	border-bottom: 5px solid rgba(54, 162, 235, 0.5);
 }
 
 .enteteTableauSuccess {
-	border-bottom: 5px solid #1af776;
+	border-bottom: 5px solid rgba(75, 255, 192, 0.5);
 }
 
 .enteteTableauWarning {
-	border-bottom: 5px solid #d2f72e;
+	border-bottom: 5px solid rgba(255, 206, 86, 0.5);
+}
+
+.colorWarning {
+	color: rgba(255, 206, 86);
+	font-size: 20px;
+}
+
+.colorDanger {
+	color: rgba(255, 99, 132);
+	font-size: 20px;
+}
+
+.colorPrimary {
+	color: rgba(54, 162, 235);
+	font-size: 20px;
+}
+
+.colorSuccess {
+	color: rgba(75, 255, 192);
+	font-size: 20px;
 }
 
 th {
@@ -84,7 +104,7 @@ td {
 	width: 70rem;
 	border-bottom-left-radius: 0px !important;
 	border-bottom-right-radius: 0px !important;
-	color: #2daf9a;
+	color: #f3008e;
 }
 
 .spent-details {
@@ -126,7 +146,7 @@ td {
 }
 
 .sum-spent {
-	color: #2daf9a;
+	color: #f3008e;
 }
 
 .bloc-a-accueil {
@@ -172,15 +192,15 @@ table {
 	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	width: 100%;
 	font-weight: bold;
-	color: #2daf9a;
+	color: #f3008e;
 }
 
 .mySubmit {
-	background-color: #2daf9a !important;
+	background-color: #f3008e !important;
 }
 
 .text-info2 {
-	color: #2daf9a !important;
+	color: #f3008e !important;
 }
 
 .mySubmi {

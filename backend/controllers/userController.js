@@ -69,7 +69,7 @@ const listUser =  asyncHandler(async (req, res, next) => {
       next();
   });
 });
-module.exports ={ registerUser,authUser ,listUser};
+module.exports ={ registerUser,authUser};
 
 
 /*const authUser = asyncHandler(async (req, res, next) => {
