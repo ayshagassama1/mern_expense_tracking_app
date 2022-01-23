@@ -26,8 +26,7 @@ const Header = () => {
 							<Nav.Link href="/expenses" className="myLink">
 								Expenses
 							</Nav.Link>
-							Failed to load resource: the server responded with a status of 500
-							(Internal Server Error)
+
 							<Nav.Link href="/reports" className="myLink">
 								Reports
 							</Nav.Link>
