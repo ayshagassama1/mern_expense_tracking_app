@@ -5,16 +5,10 @@ import { faPlusSquare, faHome, faMoneyBill } from "@fortawesome/free-solid-svg-i
 import AddExpense from "../AddExpense";
 
 const Header = () => {
-
-	
 	const [show, setShow] = useState(false);
-
-	
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-
-	
 
 	return (
 		<>
@@ -31,7 +25,9 @@ const Header = () => {
 							</Nav.Link>
 							<Nav.Link href="/expenses" className="myLink">
 								Expenses
-							</Nav.Link>Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+							</Nav.Link>
+							Failed to load resource: the server responded with a status of 500
+							(Internal Server Error)
 							<Nav.Link href="/reports" className="myLink">
 								Reports
 							</Nav.Link>
@@ -45,9 +41,8 @@ const Header = () => {
 								My profile
 							</Nav.Link>
 							<Nav.Link href="/login" className="myLink">
-								Sign in
+								Sign out
 							</Nav.Link>
-							
 						</Nav>
 					</Navbar.Collapse>
 				</Container>
