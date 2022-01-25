@@ -8,6 +8,8 @@ import {
 	faCarrot,
 	faCar,
 	faUtensils,
+	faEdit,
+	faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Expenses = () => {
@@ -21,6 +23,7 @@ const Expenses = () => {
 								<th>Category</th>
 								<th>Sum</th>
 								<th>Date</th>
+								<th>Actions</th>
 							</tr>
 
 							<tr>
@@ -30,6 +33,14 @@ const Expenses = () => {
 								</td>
 								<td>$ 40</td>
 								<td>7/7/2031</td>
+								<td>
+									<button className="btn btn-primary rounded">
+										<FontAwesomeIcon icon={faEdit} />
+									</button>
+									<button className="btn btn-danger rounded">
+										<FontAwesomeIcon icon={faTrash} />
+									</button>
+								</td>
 							</tr>
 							<tr>
 								<td className="colorPrimary">
@@ -38,6 +49,14 @@ const Expenses = () => {
 								</td>
 								<td>$ 58</td>
 								<td>7/7/2031</td>
+								<td>
+									<button className="btn btn-primary rounded">
+										<FontAwesomeIcon icon={faEdit} />
+									</button>
+									<button className="btn btn-danger rounded">
+										<FontAwesomeIcon icon={faTrash} />
+									</button>
+								</td>
 							</tr>
 							<tr>
 								<td className="colorWarning">
@@ -46,6 +65,14 @@ const Expenses = () => {
 								</td>
 								<td>$ 58</td>
 								<td>7/7/2031</td>
+								<td>
+									<button className="btn btn-primary rounded">
+										<FontAwesomeIcon icon={faEdit} />
+									</button>
+									<button className="btn btn-danger rounded">
+										<FontAwesomeIcon icon={faTrash} />
+									</button>
+								</td>
 							</tr>
 							<tr>
 								<td className="colorDanger">
@@ -54,6 +81,14 @@ const Expenses = () => {
 								</td>
 								<td>$ 58</td>
 								<td>7/7/2031</td>
+								<td>
+									<button className="btn btn-primary rounded">
+										<FontAwesomeIcon icon={faEdit} />
+									</button>
+									<button className="btn btn-danger rounded">
+										<FontAwesomeIcon icon={faTrash} />
+									</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>

@@ -4,7 +4,6 @@ import Spend from "./Spend";
 import Tableau from "./Tableau";
 
 const Body = () => {
-
 	return (
 		<>
 			<div className="bloc-a-accueil">
@@ -16,7 +15,7 @@ const Body = () => {
 				<Card className="tableaux">
 					<Tableau
 						nomCategorie="Groceries"
-						classe="enteteTableauDanger"
+						classe="enteteTableauSuccess"
 						depense="spent extra"
 						pastAverage="$25"
 						thisMonth="$55"
@@ -24,7 +23,7 @@ const Body = () => {
 					/>
 					<Tableau
 						nomCategorie="Commute"
-						classe="enteteTableauSuccess"
+						classe="enteteTableauPrimary"
 						depense="saved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 						pastAverage="$55"
 						thisMonth="$25"
@@ -32,7 +31,15 @@ const Body = () => {
 					/>
 					<Tableau
 						nomCategorie="Eating out"
-						classe="enteteTableauPrimary"
+						classe="enteteTableauWarning"
+						depense="saved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+						pastAverage="$55"
+						thisMonth="$25"
+						balance="$30"
+					/>
+					<Tableau
+						nomCategorie="Others"
+						classe="enteteTableauDanger"
 						depense="saved&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
 						pastAverage="$55"
 						thisMonth="$25"
