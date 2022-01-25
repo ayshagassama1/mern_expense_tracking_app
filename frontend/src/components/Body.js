@@ -1,7 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Card } from "react-bootstrap";
 import Spend from "./Spend";
 import Tableau from "./Tableau";
+import Loading from "./Loading";
+import ErrorMessage from "./ErrorMessage";
+import { useDispatch, useSelector } from "react-redux";
+
 
 const Body = () => {
 	return (

@@ -15,14 +15,14 @@ const layouts = require("express-ejs-layouts");
 
 const User = require("./models/userModels");
 
-const Expense = require("./models/expense");
+const Expense = require("./models/expenseModels");
 
 const userController = require('./controllers/userController');
 
 const expenseController = require('./controllers/expenseController');
 
 const userRoutes = require('./routes/userRoutes');
-const expenseRoutes = require('./routes/expense');
+const expenseRoutes = require('./routes/expenseRoutes');
 
 const {notFound, errorHandler} = require("./middlewares/errormiddleware");
 
@@ -42,6 +42,7 @@ db.once("open",() => {
 
 app.use(express.json());
 app.use('/api/users',userRoutes);
+app.use('/api/expenses',expenseRoutes);
 
 app.get("/", (req, res) => {
     res.send("API is running..");
