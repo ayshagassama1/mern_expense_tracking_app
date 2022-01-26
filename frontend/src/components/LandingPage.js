@@ -28,11 +28,11 @@ const LandingPage = () => {
 						color: "#593196",
 						width: "15%",
 					}}>
-					<Button variant="light" className="text-primary">
+					<Button href="/login" variant="light" className="text-primary">
 						Sign in
 					</Button>
 
-					<Button variant="light" className="text-primary">
+					<Button href="/register" variant="light" className="text-primary">
 						Sign up
 					</Button>
 				</div>

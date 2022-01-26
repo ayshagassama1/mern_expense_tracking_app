@@ -1,13 +1,23 @@
 import axios from "axios";
 import { USER_LOGIN_FAIL, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS } from "../constances/userConstance"
 
-export const login = (email, password) => async (dispatch) => {
+export const login = (email, password) => async (dispatch, getState) => {
     try {
         dispatch({ type: USER_LOGIN_REQUEST});
+
+        /*const {
+            userLogin: { userInfo },
+        } = getState();
+
+        
+
+        let token = "Bearer"+ userInfo.token;
+        console.log("paer"+token);*/
 
         const config = {
             Headers: {
                 "content-type": "application/json",
+                
 
             },
         };
@@ -15,7 +25,7 @@ export const login = (email, password) => async (dispatch) => {
         const  { data} = await axios.post(
             "api/users/login",
             {email, password},
-            config
+             config
         );
 
         dispatch({ type: USER_LOGIN_SUCCESS, payload: data });

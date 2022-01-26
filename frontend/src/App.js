@@ -9,25 +9,26 @@ import MyProfile from "./components/MyProfile";
 import Reports from "./components/Reports";
 import LandingPage from "./components/LandingPage";
 import Expenses from "./components/Expenses";
+import SingleExpense from "./components/SingleExpense";
 function App() {
-	
- return(	
+	return (
 		<BrowserRouter>
-			      <Header/>
+			<Header />
 			<main style={{ minHeight: "87vh" }}>
 				<Routes>
-					<Route path="/" element={<Body />} exact />
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/home" element={<Body />} exact />
 					<Route path="/login" element={<Connection />} />
 					<Route path="/register" element={<Inscription />} />
 					<Route path="/profile" element={<MyProfile />} />
 					<Route path="/reports" element={<Reports />} />
 					<Route path="/expenses" element={<Expenses />} />
-					<Route path="/landingPage" element={<LandingPage />} />
+					<Route path="/expense/:id" element={<SingleExpense />} />
 				</Routes>
 			</main>
 			<Footer />
 		</BrowserRouter>
-	
- )};
+	);
+}
 
 export default App;
