@@ -62,13 +62,13 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-/*const listUser =  asyncHandler(async (req, res, next) => {
+const listUser =  asyncHandler(async (req, res, next) => {
   User.find({}, (error, users) => {
       if(error) throw error;
       req.data = users;
       next();
   });
-});*/
+});
 module.exports ={ registerUser,authUser};
 
 

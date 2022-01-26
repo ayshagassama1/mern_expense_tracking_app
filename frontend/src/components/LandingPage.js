@@ -1,8 +1,17 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import NavBarNonConnecte from "./layout/NavBarNonConnecte";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+	let navigate = useNavigate();
+	const LogTo = () => {
+		navigate("/login");
+	};
+
+	const goToCreerCompte = () => {
+		navigate("/register");
+	};
 	return (
 		<>
 			<NavBarNonConnecte />
