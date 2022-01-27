@@ -38,11 +38,10 @@ function App() {
 				<Header />
 				<main style={{ minHeight: "87vh" }}>
 					<Routes>
-						<Route path="/" element={<Body />} exact />
+						<Route path="/home" element={<Body />} exact />
 						<Route path="/profile" element={<MyProfile />} />
 						<Route path="/reports" element={<Reports />} />
 						<Route path="/expenses" element={<Expenses />} exact />
-						<Route path="/expense/:id" element={<SingleExpense />} />
 					</Routes>
 				</main>
 				<Footer />

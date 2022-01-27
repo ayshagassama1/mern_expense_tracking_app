@@ -30,37 +30,75 @@ export const options = {
 	},
 };
 
-const labels = ["January", "February", "March", "April", "May", "June"];
-const datas = [10, 45, 60, 83, 5, 13];
-const datas1 = [71, 5, 0, 8, 51, 8];
-const datas2 = [11, 4, 40, 18, 31, 28];
-const datas3 = [31, 45, 10, 78, 41, 38];
-export const data = {
-	labels,
-	datasets: [
-		{
-			label: "Commute",
-			data: datas1,
-			backgroundColor: "rgba(54, 162, 235, 0.8)",
-		},
-		{
-			label: "Groceries",
-			data: datas,
-			backgroundColor: "rgba(75, 255, 192, 0.8)",
-		},
-		{
-			label: "Eating-out",
-			data: datas2,
-			backgroundColor: "rgba(255, 206, 86, 0.8)",
-		},
-		{
-			label: "Others",
-			data: datas3,
-			backgroundColor: "rgba(255, 99, 132, 0.8)",
-		},
-	],
-};
+export default function GlobalChart(props) {
+	let chartData = props.chartData;
+	let labels = [];
 
-export default function GlobalChart() {
+	for (let i = 4; i < chartData.length; i++) {
+		switch (chartData[i]) {
+			case "01":
+				labels.push("Janvier");
+				break;
+			case "02":
+				labels.push("Février");
+				break;
+			case "03":
+				labels.push("Mars");
+				break;
+			case "04":
+				labels.push("Avril");
+				break;
+			case "05":
+				labels.push("Mai");
+				break;
+			case "06":
+				labels.push("Juin");
+				break;
+			case "07":
+				labels.push("Juillet");
+				break;
+			case "08":
+				labels.push("Août");
+				break;
+			case "09":
+				labels.push("Septembre");
+				break;
+			case "10":
+				labels.push("Octobre");
+				break;
+			case "11":
+				labels.push("Novembre");
+				break;
+			case "12":
+				labels.push("Décembre");
+				break;
+		}
+	}
+	const data = {
+		labels,
+		datasets: [
+			{
+				label: "Commute",
+				data: chartData[0],
+				backgroundColor: "rgba(54, 162, 235, 0.8)",
+			},
+			{
+				label: "Groceries",
+				data: chartData[1],
+				backgroundColor: "rgba(75, 255, 192, 0.8)",
+			},
+			{
+				label: "Eating-out",
+				data: chartData[2],
+				backgroundColor: "rgba(255, 206, 86, 0.8)",
+			},
+			{
+				label: "Others",
+				data: chartData[3],
+				backgroundColor: "rgba(255, 99, 132, 0.8)",
+			},
+		],
+	};
+
 	return <Bar options={options} data={data} />;
 }

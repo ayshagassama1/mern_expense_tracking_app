@@ -22,10 +22,13 @@ const Connection = ({ connect }) => {
 		e.preventDefault();
 		dispatch(login(email, password));
 		if (userInfo) {
-			navigate("/");
+			navigate("/home");
 		}
 	};
 
+	/*useEffect(() => {
+		navigate("/home");
+	}, []);*/
 	return (
 		<div className="formBloc">
 			<div className="myForm">
