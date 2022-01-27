@@ -71,28 +71,50 @@ const Expenses = () => {
 							</tr>
 
 							{expenses &&
-								expenses?.map((expense) => (
-									<tr key={expense._id}>
-										<td className="colorSuccess">
-											<FontAwesomeIcon icon={faCarrot} />
-											&nbsp;{expense.category}
-										</td>
-										<td>{expense.montant}</td>
-										<td> {expense.createdAt.substring(0, 10)}</td>
-										<td>
-											<button
-												className="btn btn-primary rounded"
-												href={`/expense/${expense._id}`}>
-												<FontAwesomeIcon icon={faEdit} />
-											</button>
-											<button
-												className="btn btn-danger rounded"
-												onClick={() => deleteHandler(expense._id)}>
-												<FontAwesomeIcon icon={faTrash} />
-											</button>
-										</td>
-									</tr>
-								))}
+								expenses?.map((expense) => {
+									let classe = "";
+									let icone = "";
+									switch (expense.category) {
+										case "groceries":
+											classe = "colorSuccess";
+											icone = faCarrot;
+											break;
+										case "commute":
+											classe = "colorPrimary";
+											icone = faCar;
+											break;
+										case "others":
+											classe = "colorDanger";
+											icone = faMoneyBill;
+											break;
+										case "eating out":
+											classe = "colorWarning";
+											icone = faUtensils;
+											break;
+									}
+									return (
+										<tr key={expense._id}>
+											<td className={classe}>
+												<FontAwesomeIcon icon={icone} />
+												&nbsp;{expense.category}
+											</td>
+											<td>{expense.montant}</td>
+											<td> {expense.createdAt.substring(0, 10)}</td>
+											<td>
+												<button
+													className="btn btn-primary rounded"
+													href={`/expense/${expense._id}`}>
+													<FontAwesomeIcon icon={faEdit} />
+												</button>
+												<button
+													className="btn btn-danger rounded"
+													onClick={() => deleteHandler(expense._id)}>
+													<FontAwesomeIcon icon={faTrash} />
+												</button>
+											</td>
+										</tr>
+									);
+								})}
 						</tbody>
 					</table>
 				</ul>
