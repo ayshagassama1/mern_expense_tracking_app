@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Loading from "./Loading";
-import {Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import ErrorMessage from "./ErrorMessage";
 import { useDispatch, useSelector } from "react-redux";
-import {login} from "../actions/userAction";
+import { login } from "../actions/userAction";
 
-const Connection =({connect}) => {
-
+const Connection = ({ connect }) => {
 	let navigate = useNavigate();
-	
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	
+
 	const dispatch = useDispatch();
 
-	const userLogin =  useSelector((state) => state.userLogin);
-	const { loading, error, userInfo} = userLogin;
+	const userLogin = useSelector((state) => state.userLogin);
+	const { loading, error, userInfo } = userLogin;
 
-	const submitHandler =  (e) => {
+	const submitHandler = (e) => {
 		e.preventDefault();
-        dispatch(login(email, password));
-		if(userInfo) {
-			navigate("/expenses");
+		dispatch(login(email, password));
+		if (userInfo) {
+			navigate("/");
 		}
 	};
 

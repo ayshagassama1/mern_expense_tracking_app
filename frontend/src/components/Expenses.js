@@ -51,7 +51,7 @@ const Expenses = () => {
 	useEffect(() => {
 		dispatch(listExpense());
 		if (!userInfo) {
-			navigate("/home");
+			navigate("/");
 		}
 	}, [dispatch, successCreate, userInfo, navigate]);
 	return (

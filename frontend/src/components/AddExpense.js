@@ -6,7 +6,7 @@ import ErrorMessage from "./ErrorMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { createExpenseAction } from "../actions/expenseActions";
 
-const AddExpense = ({ show, handleClose }) => {
+const AddExpense = (props) => {
 	let navigate = useNavigate();
 	const dispatch = useDispatch();
 
@@ -25,7 +25,7 @@ const AddExpense = ({ show, handleClose }) => {
 	};
 	return (
 		<>
-			<Modal show={show} onHide={handleClose}>
+			<Modal show={props.show} onHide={props.onHide}>
 				<Modal.Header closeButton></Modal.Header>
 				<Modal.Body>
 					{error && <ErrorMessage variant="danger"> {error}</ErrorMessage>}
@@ -47,19 +47,14 @@ const AddExpense = ({ show, handleClose }) => {
 							<Form.Select
 								aria-label="Default select example"
 								onChange={(e) => setCategory(e.target.value)}>
-								<option>Categories</option>
 								<option value="groceries">Groceries</option>
 								<option value="commute">Commute</option>
 								<option value="eating out">Eating out</option>
+								<option value="others">Others</option>
 							</Form.Select>
 						</Form.Group>
-						{loading && <Loading size={50} />}
 						<Form.Group className="mb-3" controlId="password">
-							<Form.Control
-								type="submit"
-								className="mySubmit"
-								value=" Create Expense"
-							/>
+							<Form.Control type="submit" className="mySubmit" value="Save" />
 						</Form.Group>
 					</Form>
 				</Modal.Body>

@@ -14,7 +14,6 @@ const LandingPage = () => {
 	};
 	return (
 		<>
-			<NavBarNonConnecte />
 			<div
 				style={{
 					backgroundColor: "#593196",
