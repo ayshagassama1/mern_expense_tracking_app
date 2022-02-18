@@ -203,6 +203,11 @@ const Reports = () => {
 							{error && <ErrorMessage variant="danger"> {error}</ErrorMessage>}
 							{loadDaily && <Loading />}
 							<Tab.Pane className="doughnut" eventKey="first">
+								{!dailyData.reduce((partialSum, a) => partialSum + a, 0) && (
+									<ErrorMessage variant="warning">
+										{"Vous n'avez pas encore de données aujourd'hui"}
+									</ErrorMessage>
+								)}
 								<DailyChart chartData={dailyChartData} />
 							</Tab.Pane>
 							<Tab.Pane eventKey="second">
