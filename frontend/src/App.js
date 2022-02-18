@@ -13,31 +13,19 @@ import SingleExpense from "./components/SingleExpense";
 import { useDispatch, useSelector } from "react-redux";
 import NavBarNonConnecte from "./components/layout/NavBarNonConnecte";
 function App() {
-	const dispatch = useDispatch();
 
 	const userLogin = useSelector((state) => state.userLogin);
-	const { userInfo } = userLogin;
-
-	if (!userInfo) {
+	const { loading, error, userInfo } = userLogin;
 		return (
 			<BrowserRouter>
-				<NavBarNonConnecte />
+               {userInfo && <Header />}
+			   {!userInfo && <NavBarNonConnecte /> }
+				
 				<main style={{ minHeight: "87vh" }}>
 					<Routes>
 						<Route path="/" element={<LandingPage />} exact />
-						<Route path="/login" element={<Connection />} />
+						<Route path="/login" element={<Connection />} />   
 						<Route path="/register" element={<Inscription />} />
-					</Routes>
-				</main>
-				<Footer />
-			</BrowserRouter>
-		);
-	} else {
-		return (
-			<BrowserRouter>
-				<Header />
-				<main style={{ minHeight: "87vh" }}>
-					<Routes>
 						<Route path="/home" element={<Body />} exact />
 						<Route path="/profile" element={<MyProfile />} />
 						<Route path="/reports" element={<Reports />} />
@@ -48,6 +36,5 @@ function App() {
 			</BrowserRouter>
 		);
 	}
-}
 
 export default App;
