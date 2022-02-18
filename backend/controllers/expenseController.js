@@ -1,7 +1,8 @@
 const Expense = require("../models/expenseModels");
 const asyncHandler = require("express-async-handler");
+
 const getExpense = asyncHandler(async (req, res) => {
-	const expenses = await Expense.find(req.user._id);
+	const expenses = await Expense.find({user: req.user._id});
 	res.json(expenses);
 });
 

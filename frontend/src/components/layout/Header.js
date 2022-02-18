@@ -28,7 +28,7 @@ const Header = () => {
 		<>
 			<Navbar bg="primary" variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand href="#">
+					<Navbar.Brand href="/home">
 						<FontAwesomeIcon icon={faMoneyBill} /> &nbsp; Expense Tracking App
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />

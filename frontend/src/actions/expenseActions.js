@@ -30,7 +30,7 @@ export const listExpense = () => async (dispatch, getState) => {
 		const config = {
 			headers: {
 				"content-type": "application/json",
-				Authorization: token,
+				"Authorization": token,
 			},
 		};
 
