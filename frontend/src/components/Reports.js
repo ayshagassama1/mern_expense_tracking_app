@@ -18,7 +18,7 @@ function getMonth(date) {
 	let annee = mdate.getFullYear();
 	let month = date.split("-");
 	if (annee != parseInt(month[0])) {
-		return -1;
+		return 13;
 	}
 	return month[1];
 }
@@ -184,7 +184,6 @@ const Reports = () => {
 		setLoadDaily(false);
 	}, [dispatch, successCreate, userInfo, navigate]);
 
-	getGlobalData(expenses);
 	return (
 		<div className="tabCharts">
 			<Tab.Container id="left-tabs-example" defaultActiveKey="first">

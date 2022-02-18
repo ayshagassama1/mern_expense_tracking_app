@@ -1,25 +1,23 @@
-import React, { Component, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import React from "react";
 
-export default class Spend extends Component {
-	render() {
-		return (
+const Spend = (props) => {
+	return (
+		<div>
 			<div className="u-spent">
 				<h2 className="border-bottom">You've spent</h2>
 				<div className="spent-details">
 					<div>
 						<div className="my-container">
 							<img src="mai.jpg" alt="image" className="img-fluid w-50"></img>
-							<h2 className="centered">1000$</h2>
+							<h2 className="centered">{props.monthlyExpenses}$</h2>
 						</div>
 					</div>
 					<div className="recent-spent">
 						<div className="bloc-spent">
-							<span className="sum-spent">$20</span> yesterday
+							<span className="sum-spent">${props.yesterdayExpenses}</span> yesterday
 						</div>
 						<div className="bloc-spent">
-							<span className="sum-spent">$15</span> today
+							<span className="sum-spent">${props.dailyExpenses}</span> today
 						</div>
 						<div className="text-center text-secondary">
 							<a href="/expenses">See more</a>
@@ -27,6 +25,8 @@ export default class Spend extends Component {
 					</div>
 				</div>
 			</div>
-		);
-	}
-}
+		</div>
+	);
+};
+
+export default Spend;

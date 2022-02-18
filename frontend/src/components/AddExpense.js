@@ -47,6 +47,7 @@ const AddExpense = (props) => {
 							<Form.Select
 								aria-label="Default select example"
 								onChange={(e) => setCategory(e.target.value)}>
+								<option>Categories</option>
 								<option value="groceries">Groceries</option>
 								<option value="commute">Commute</option>
 								<option value="eating out">Eating out</option>

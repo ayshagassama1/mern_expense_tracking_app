@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Container, Nav, Navbar, Modal, Form } from "react-bootstrap";
-import { faPlusSquare, faHome } from "@fortawesome/free-solid-svg-icons";
+import { faPlusSquare, faHome, faMoneyBill } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/userAction";
 import { Link, useNavigate } from "react-router-dom";
@@ -28,7 +28,9 @@ const Header = () => {
 		<>
 			<Navbar bg="primary" variant="dark" expand="lg">
 				<Container>
-					<Navbar.Brand href="#">Expense Tracking App</Navbar.Brand>
+					<Navbar.Brand href="#">
+						<FontAwesomeIcon icon={faMoneyBill} /> &nbsp; Expense Tracking App
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="m-auto">

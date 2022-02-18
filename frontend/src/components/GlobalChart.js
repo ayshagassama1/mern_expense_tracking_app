@@ -72,6 +72,8 @@ export default function GlobalChart(props) {
 			case "12":
 				labels.push("Décembre");
 				break;
+			default:
+				labels.push("Années précédentes");
 		}
 	}
 	const data = {
